@@ -1,16 +1,21 @@
 const faker = require('faker');
 
-const orders = [];
-for (let index = 0; index < 1000; index++) {
-  orders.push({
+const users = {};
+
+for (let index = 0; index < 50; index++) {
+  const id = faker.random.uuid();
+  users[id] = {
+    id,
     name: faker.name.findName(),
-    zipCode: faker.address.zipCode(),
-    product: faker.commerce.productName(),
-    price: parseInt(faker.commerce.price(), 10),
-  });
+    lastName: faker.name.lastName(),
+  };
 }
 
-const rta = orders
-.map(order => order.price)
-.reduce((count, value) => count + value, 0);
-console.log(rta);
+console.log(users);
+console.log(users['2264458f-d502-44d4-916f-02a9a8190032']);
+
+console.log(Object.keys(users));
+
+// const user = users
+// .filter(item => item.id === 'f67d94d1-2274-4369-a2b6-40d10f46c9f5');
+// console.log(user);

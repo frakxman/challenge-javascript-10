@@ -1,11 +1,21 @@
-const split1 = [1,1,1,1,1,1,1];
-const split2 = [2,2,2,2,2,2];
-const split3 = [3,3,3,3,3,3,3,3];
+// re reduce
 
-const rtaSplit1 = split1.length;
-const rtaSplit2 = split2.length;
-const rtaSplit3 = split3.length;
+const split1 = [100,101,102,103,104,105,106,107,109];
+const split2 = [110,111,112,113,114,115,116,117,118,119];
+const split3 = [120,121,122,123,124,125,136,127,128,129];
 
-const totalReduce = [rtaSplit1, rtaSplit2, rtaSplit3].reduce((count, value) => count + value, 0);;
+const reduceSplit1 = split1.reduce((count, item) => count + item, 0);
+const reduceSplit2 = split2.reduce((count, item) => count + item, 0);
+const reduceSplit3 = split3.reduce((count, item) => count + item, 0);
 
-console.log(totalReduce);
+const reduceTotal = [reduceSplit1, reduceSplit2, reduceSplit3];
+console.log(reduceTotal);
+const rta = reduceTotal.reduce((count, item) => count + item, 0);
+console.log(rta);
+
+
+// reduce
+
+const totalData = [...split1, ...split2, ...split3];
+const rta2 = totalData.reduce((count, item) => count + item, 0);
+console.log(rta2);
